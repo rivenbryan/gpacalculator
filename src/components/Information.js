@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, CardMedia, autocompleteClasses } from "@mui/material"
+import { Box, Typography, CardMedia } from "@mui/material"
 
 const Information = ({commonStyles}) => {
  
