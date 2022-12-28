@@ -4,8 +4,10 @@ import Form from "./Form";
 import Information from "./Information"
 import { Box } from "@mui/material"
 
+
 export default function MainPage() {
-    
+
+
     const commonStyles = {
         border: '1px solid rgba(34,36,38,.15)',
         borderRadius: '.28571429rem',
