@@ -23,10 +23,8 @@ export default function Loginform({ title, setPassword, setEmail, handleAction }
 
         // If Token exists, it will remain on this page
         if (authToken) {
-            navigate('/home')
+            navigate('/')
         }
-
-
     }, [navigate])
 
     return (

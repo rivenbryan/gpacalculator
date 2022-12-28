@@ -24,7 +24,7 @@ const App = () => {
       // Returns a promise
       createUserWithEmailAndPassword(authentication, email, password)
         .then((response) => {
-          // If success then navigate to /home
+          // If success then navigate to /
           navigate('/')
           // Creates a Token like Cookie which can be used 
           localStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
@@ -69,6 +69,7 @@ const App = () => {
     }
   }
 
+  // Re-renders when user is authenticated
   onAuthStateChanged(authentication, (user) => {
     if (user) {
       setuserName(user.email)

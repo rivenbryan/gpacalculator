@@ -13,11 +13,12 @@ import Menu from '@mui/material/Menu';
 import { useNavigate } from 'react-router-dom'
 import { getAuth, signOut } from "firebase/auth";
 import { app } from '../firebase-config';
-// Navbar needs to have the state -> email
+
 const Navbar = () => {
   let navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const { userName, setuserName } = useContext(UserContext)
+  
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
