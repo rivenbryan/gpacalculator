@@ -1,7 +1,6 @@
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Link from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import Typography from '@mui/material/Typography';

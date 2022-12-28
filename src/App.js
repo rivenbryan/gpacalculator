@@ -18,7 +18,7 @@ const App = () => {
   const handleAction = (id) => {
     const authentication = getAuth(app);
 
-    if (id == 2) {
+    if (id === 2) {
       // Returns a promise
       createUserWithEmailAndPassword(authentication, email, password)
         .then((response) => {
@@ -28,7 +28,7 @@ const App = () => {
           localStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
         }).catch((error) => {
         
-          if(email == "" && password == "") {
+          if(email === "" && password === "") {
             toast.error('Empty string!');
           }
 
@@ -42,17 +42,17 @@ const App = () => {
         })
     }
 
-    if (id == 1) {
+    if (id === 1) {
       signInWithEmailAndPassword(authentication, email, password)
         .then((response) => {
           navigate('/home')
           localStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
         }).catch((error) => {
          
-          if(email == "" && password == "") {
+          if(email === "" && password === "") {
             toast.error('Empty string!');
           }
-          
+
           if(error.code === 'auth/invalid-email'){
             toast.error('Invalid Email')
           }

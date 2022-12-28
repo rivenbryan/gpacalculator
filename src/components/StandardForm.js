@@ -27,7 +27,7 @@ export default function Loginform({ title, setPassword, setEmail, handleAction }
         }
 
 
-    }, [])
+    }, [navigate])
 
     return (
         <>
