@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Form from "./components/Form";
+import Information from "./components/Information";
+import { Box } from "@mui/material"
+const App = () => {
+  const commonStyles = {
+    border: '1px solid rgba(34,36,38,.15)',
+    borderRadius: '.28571429rem',
+    justifyContent: 'center',
+    width: '50%',
+    margin: 'auto',
+    padding: 2,
+    marginBottom: 5,
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Box sx={{margin: -1}}>
+      <Navbar/>
+      <Form commonStyles={commonStyles} />
+      <Information commonStyles={commonStyles} />
+      <Footer/>
+    </Box>
+  )
 }
 
 export default App;
