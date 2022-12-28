@@ -1,4 +1,4 @@
-import { Grid, TextField } from "@mui/material"
+import { Grid, TextField, Tooltip } from "@mui/material"
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -34,11 +34,11 @@ const Course = ({ score, setScores }) => {
     }
 
     const handleDeleteCourse = (e) => {
-        setScores( (prevScores) => {
+        setScores((prevScores) => {
             let scoresArr = []
-            for(let i=0; i<prevScores.length; i++){
+            for (let i = 0; i < prevScores.length; i++) {
                 const currentScore = prevScores[i]
-                if(currentScore.id === score.id){
+                if (currentScore.id === score.id) {
                     continue;
                 }
                 scoresArr.push(currentScore)
@@ -75,9 +75,11 @@ const Course = ({ score, setScores }) => {
                     <MenuItem value={2}>C</MenuItem>
                     <MenuItem value={1.5}>C-</MenuItem>
                 </Select>
-                <IconButton onClick={handleDeleteCourse} aria-label="delete" size="large">
-                    <DeleteIcon />
-                </IconButton>
+                <Tooltip title="Delete">
+                    <IconButton onClick={handleDeleteCourse} aria-label="delete" size="large">
+                        <DeleteIcon />
+                    </IconButton>
+                </Tooltip>
             </Grid>
         </Grid>
     )

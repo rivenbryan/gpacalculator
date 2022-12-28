@@ -12,7 +12,8 @@ const App = () => {
     margin: 'auto',
     padding: 2,
     marginBottom: 5,
-  };
+  }
+
   return (
     <Box sx={{margin: -1}}>
       <Navbar/>
