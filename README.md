@@ -1,6 +1,7 @@
 # GPA Calculator
 
-This is a simple web application built with React.js that allows users to calculate their GPA.
+This is a simple web application built with React.js that allows users to calculate their GPA. 
+It uses Firebase as the backend service and Material-UI for styling.
 
 ## Installation
 
