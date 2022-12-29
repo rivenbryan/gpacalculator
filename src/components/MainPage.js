@@ -1,7 +1,7 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import Form from "./Form";
-import Information from "./Information"
+import Navbar from "./mainPage/Navbar";
+import Footer from "./mainPage/Footer";
+import Form from "./mainPage/Body";
+import Information from "./mainPage/Information"
 import { Box } from "@mui/material"
 
 

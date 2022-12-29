@@ -49,7 +49,7 @@ const Course = ({ score, setScores }) => {
     }
 
     return (
-        <Grid sx={{ paddingBottom: 1 }} container spacing={2} columns={{ xs: 4 }}>
+        <Grid sx={{ paddingTop: 1.5 }} container spacing={2} columns={{ xs: 4 }}>
             <Grid item xs={1}>
                 <TextField
                     id="outlined-basic"

@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react'
 import { Box, TextField, Button, Typography, Grid, Link } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import Navbar from "./Navbar";
+import Navbar from '../mainPage/Navbar'
 export default function Loginform({ title, setPassword, setEmail, handleAction }) {
 
     const commonStyles = {

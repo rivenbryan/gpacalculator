@@ -54,28 +54,18 @@ const Form = ({commonStyles}) => {
 
     return (
         <Box sx={{...commonStyles, marginTop: 2.5}}>
-            <Button onClick={handleNewCourse} variant="contained" endIcon={<AddIcon />}>Add Course</Button>
-            <Grid sx={{ paddingBottom: 2, paddingTop: 2 }} container spacing={2} columns={{ xs: 4 }}>
-                <Grid item xs={1}>
-                    <Typography variant="h6">Course</Typography>
-                </Grid>
-                <Grid item xs={1}>
-                    <Typography variant="h6">Credit</Typography>
-                </Grid>
-                <Grid item xs={1}>
-                    <Typography variant="h6">Grade</Typography>
-                </Grid>
-            </Grid>
+            
 
             {scores.map((Score) => {
                 return <Course key={Score.id} score={Score} setScores={setScores} />
             })}
 
             <Grid container direction="row" sx={{ marginTop: 2 }}  >
+            <Button sx={{ marginRight: 2 }} onClick={handleNewCourse} variant="contained" endIcon={<AddIcon />}>Add Course</Button>
                 <Button onClick={handleSubmit} sx={{ marginRight: 2 }} variant="contained" size="medium">
                     Calculate GPA
                 </Button>
-                <Typography variant="h6" sx={{ marginRight: 2 }} >Current GPA: {currentGPA}</Typography>
+                <Typography variant="h6" sx={{ marginRight: 2, fontSize: '1.5rem' }} > GPA: {currentGPA}</Typography>
             </Grid>
         </Box>
     )

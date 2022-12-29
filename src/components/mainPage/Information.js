@@ -4,7 +4,7 @@ const Information = ({commonStyles}) => {
  
 
     return (
-        <Box sx={commonStyles}>
+        <Box sx={{...commonStyles, marginBottom: 25}}>
             <Typography variant="h6" sx={{paddingBottom: 1}}>How is GPA Calculated?</Typography>
             <Typography variant="subtitle1" sx={{paddingBottom: 1}}>In order to calculate GPA, we would first need the following 3 components: </Typography>
             <Typography variant="subtitle1">1: Total Credits: Total Credits earned over all the modules taken </Typography>
