@@ -2,6 +2,7 @@
 
 This is a simple web application built with React.js that allows users to calculate their GPA. 
 It uses Firebase as the backend service and Material-UI for styling. Currently it only supports university with a cap of 5.
+You can visit the webiste on https://whatismygpa.netlify.app/
 
 ## Installation
 
