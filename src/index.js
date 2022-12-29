@@ -1,3 +1,14 @@
+/*
+
+@TODO:
+    1. Supports mobile application resolution
+    2. Pop-up message after registration/login/logout successfully
+    3. Saving (GPA data object) to firebase
+    4. Retriving (GPA data object) from firebase
+    5. Profile Page 
+
+*/
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
