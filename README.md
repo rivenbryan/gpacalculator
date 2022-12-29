@@ -15,17 +15,39 @@ npm install
 
 Next, create a `src/firebase.js` file and include your Firebase project's API keys. You can find these keys in the Firebase console under the "Project Settings" > "General" tab.
 
+```
+import firebase from 'firebase/app';
+import 'firebase/database';
 
+const firebaseConfig = {
+  apiKey: 'YOUR_API_KEY',
+  authDomain: 'YOUR_AUTH_DOMAIN',
+  databaseURL: 'YOUR_DATABASE_URL',
+  projectId: 'YOUR_PROJECT_ID',
+  storageBucket: 'YOUR_STORAGE_BUCKET',
+  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+  appId: 'YOUR_APP_ID',
+  measurementId: 'YOUR_MEASUREMENT_ID'
+};
+
+firebase.initializeApp(firebaseConfig);
+
+export default firebase;
+```
 ## Usage
 
 To start the development server, run:
 
+```
+npm start
+```
 The app will be available at http://localhost:3000.
 
 To build the production version of the app, run:
 
+```
 npm run build
-
+```
 ## Features
 
 - Enter the number of credit hours and letter grade for each course to calculate your GPA.
