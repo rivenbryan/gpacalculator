@@ -7,9 +7,30 @@ It uses Firebase as the backend service and Material-UI for styling.
 
 To get started, clone the repository and install the dependencies:
 
-git clone https://github.com/[your-username]/gpa-calculator.git
-cd gpa-calculator
+git clone https://github.com/[your-username]/react-app-with-firebase.git
+cd react-app-with-firebase
 npm install
+
+Next, create a `src/firebase.js` file and include your Firebase project's API keys. You can find these keys in the Firebase console under the "Project Settings" > "General" tab.
+
+```javascript
+import firebase from 'firebase/app';
+import 'firebase/database';
+
+const firebaseConfig = {
+  apiKey: 'YOUR_API_KEY',
+  authDomain: 'YOUR_AUTH_DOMAIN',
+  databaseURL: 'YOUR_DATABASE_URL',
+  projectId: 'YOUR_PROJECT_ID',
+  storageBucket: 'YOUR_STORAGE_BUCKET',
+  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+  appId: 'YOUR_APP_ID',
+  measurementId: 'YOUR_MEASUREMENT_ID'
+};
+
+firebase.initializeApp(firebaseConfig);
+
+export default firebase;
 
 ## Usage
 
