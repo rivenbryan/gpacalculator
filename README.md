@@ -13,7 +13,7 @@ npm install
 
 Next, create a `src/firebase.js` file and include your Firebase project's API keys. You can find these keys in the Firebase console under the "Project Settings" > "General" tab.
 
-```javascript
+``javascript
 import firebase from 'firebase/app';
 import 'firebase/database';
 
