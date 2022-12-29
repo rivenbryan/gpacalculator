@@ -1,7 +1,7 @@
 # GPA Calculator
 
 This is a simple web application built with React.js that allows users to calculate their GPA. 
-It uses Firebase as the backend service and Material-UI for styling.
+It uses Firebase as the backend service and Material-UI for styling. Currently it only supports university with a cap of 5.
 
 ## Installation
 
@@ -50,7 +50,7 @@ npm run build
 ```
 ## Features
 
-- Enter the number of credit hours and letter grade for each course to calculate your GPA.
+- Enter the number of credit hours and letter grade for each course to target your GPA.
 - View your overall GPA as well as GPA by semester.
 
 ## Future Plans
