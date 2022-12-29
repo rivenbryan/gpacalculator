@@ -62,7 +62,7 @@ npm run build
 
 - [React.js](https://reactjs.org/)
 - [Material-UI](https://material-ui.com/)
-- 
+- [Firebase](https://firebase.google.com/)
 
 ## License
 
