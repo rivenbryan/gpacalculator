@@ -17,3 +17,24 @@ To start the development server, run:
 The app will be available at http://localhost:3000.
 
 To build the production version of the app, run:
+
+npm run build
+
+## Features
+
+- Enter the number of credit hours and letter grade for each course to calculate your GPA.
+- View your overall GPA as well as GPA by semester.
+
+## Future Plans
+
+- Allow users to save and track multiple semesters.
+- Add support for weighted GPAs.
+
+## Credits
+
+- [React.js](https://reactjs.org/)
+- [Material-UI](https://material-ui.com/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
