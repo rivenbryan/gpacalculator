@@ -18,10 +18,11 @@ export default function Loginform({ title, setPassword, setEmail, handleAction }
     }
 
     let navigate = useNavigate();
+    // Check if user is logged in 
     useEffect(() => {
         let authToken = localStorage.getItem('Auth Token')
 
-        // If Token exists, it will remain on this page
+        // If Token exists, it will redirect user to homepage
         if (authToken) {
             navigate('/')
         }

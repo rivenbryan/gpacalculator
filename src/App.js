@@ -4,10 +4,12 @@ import { useState, forwardRef } from 'react';
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
 import MainPage from "./components/MainPage";
 import StandardForm from "./components/forms/StandardForm"
-import 'react-toastify/dist/ReactToastify.css';
+import ProfilePage from './components/profilePage/ProfilePage';
+
 import { UserContext } from './contexts/userContext'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+
 
 const App = () => {
 
@@ -20,7 +22,6 @@ const App = () => {
 
   const authentication = getAuth(app);
   let navigate = useNavigate();
-
 
   // Handler when user clicks submit form for login and r egister
   const handleAction = (id) => {
@@ -121,7 +122,7 @@ const App = () => {
           <Route path='/login' element={<StandardForm handleAction={() => handleAction(1)} setEmail={setEmail} setPassword={setPassword} title="Login" />} />
           <Route path='/register' element={<StandardForm handleAction={() => handleAction(2)} setEmail={setEmail} setPassword={setPassword} title="Register" />} />
           <Route path='/' element={<MainPage />} />
-
+          <Route path='/profile' element={<ProfilePage/>} />
         </Routes>
       </UserContext.Provider>
     </>
