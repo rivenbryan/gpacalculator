@@ -1,24 +1,28 @@
 import { app } from './firebase-config';
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
 import MainPage from "./components/MainPage";
 import StandardForm from "./components/forms/StandardForm"
 import 'react-toastify/dist/ReactToastify.css';
 import { UserContext } from './contexts/userContext'
 import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
-import Alert from '@mui/material/Alert';
 const App = () => {
-  
+
+
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [userName, setuserName] = useState('')
   const [notiOpen, setnotiOpen] = useState([false, "", "success"]);
-  
+
   const authentication = getAuth(app);
   let navigate = useNavigate();
 
+
+  // Handler when user clicks submit form for login and r egister
   const handleAction = (id) => {
 
     if (id === 2) {
@@ -38,7 +42,7 @@ const App = () => {
 
           if (error.code === 'auth/weak-password') {
             setnotiOpen([true, "Password should be at least 6 characters", "error"])
-           
+
           }
 
           if (error.code === 'auth/email-already-in-use') {
@@ -52,17 +56,25 @@ const App = () => {
         .then((response) => {
           setnotiOpen([true, "Successfully logged in!", "success"])
           navigate('/')
-          
+
           localStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
         }).catch((error) => {
+          console.log(error)
+          
+          if(error.code === 'auth/too-many-requests'){
+            setnotiOpen([true, "Access to this account has been temporarily disabled due to many failed login attempts. Please reset your password or try again later.", "error"])
+          }
+          if(error.code === 'auth/wrong-password)'){
+            setnotiOpen([true, "Wrong username or password! ", "error"])
+          }
 
           if (email === "" || password === "") {
-            setnotiOpen([true, "Email or password cannot be blank!", "error"])
+            setnotiOpen([true, "Email or password cannot be empty!", "warning"])
           }
 
           if (error.code === 'auth/weak-password') {
-            setnotiOpen([true, "Password should be at least 6 characters", "error"])
-           
+            setnotiOpen([true, "Password should be at least 6 characters", "warning"])
+
           }
 
           if (error.code === 'auth/email-already-in-use') {
@@ -83,17 +95,23 @@ const App = () => {
     }
   });
 
-  const handleClose = (event, reason) => {
+  // Handler for snackbar when notification is closed
+  const handleSnackbarClose = (event, reason) => {
+    // Reason for it to close is because of clickaway 
     if (reason === 'clickaway') {
       return;
     }
     setnotiOpen([false, "", ""]);
   };
 
-  
+  // Pre-defined style for alert
+  const Alert = forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
   return (
     <>
-      <Snackbar open={notiOpen[0]} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={notiOpen[0]} autoHideDuration={6000} onClose={handleSnackbarClose}>
         <Alert severity={notiOpen[2]} sx={{ width: '100%' }}>
           {notiOpen[1]}
         </Alert>
