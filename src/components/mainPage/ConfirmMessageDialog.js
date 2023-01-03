@@ -8,7 +8,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 export default function ConfirmMessageDialog({handleClose, open, handleSave, setSemester, errorMessage}) {
-    console.log(errorMessage)
   return (
     <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Save GPA</DialogTitle>

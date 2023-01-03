@@ -62,8 +62,8 @@ const Form = () => {
             }
         }
         console.log("Saved to Database!")
-
-
+        setErrorMessage("") // Reset Error message
+        setSemester("") // Reset Semester
 
     }
 

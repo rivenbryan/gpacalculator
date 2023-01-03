@@ -1,9 +1,7 @@
 /*
 @TODO:
     1. Supports mobile application resolution
-    2. Profile Page
-    3. Saving (GPA data object) to firebase
-    4. Retriving (GPA data object) from firebase
+    2. Store and fetch GPA into Profile Page
 */
 
 // Body.js -> need to update firebase currentSemester's document value
