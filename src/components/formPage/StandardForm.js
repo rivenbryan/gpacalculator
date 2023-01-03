@@ -1,10 +1,10 @@
 import { React, useEffect } from 'react'
 import { Box, TextField, Button, Typography, Grid, Link } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import Navbar from '../mainPage/Navbar'
+import Navbar from '../Navbar'
 export default function Loginform({ title, setPassword, setEmail, handleAction }) {
 
-    const commonStyles = {
+    const formStyles = {
         border: '1px solid rgba(34,36,38,.15)',
         borderRadius: '.28571429rem',
         textAlign: 'center',
@@ -14,7 +14,6 @@ export default function Loginform({ title, setPassword, setEmail, handleAction }
         padding: 2,
         position: 'absolute', left: '50%', top: '50%',
         transform: 'translate(-50%, -50%)'
-
     }
 
     let navigate = useNavigate();
@@ -33,7 +32,7 @@ export default function Loginform({ title, setPassword, setEmail, handleAction }
 
             <Box sx={{ margin: -1 }}>
                 <Navbar />
-                <Box sx={commonStyles} component="form">
+                <Box sx={formStyles} component="form">
 
                     <Grid container rowSpacing={2}>
                         <Grid item xs={12}>

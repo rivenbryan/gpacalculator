@@ -6,6 +6,8 @@
     4. Retriving (GPA data object) from firebase
 */
 
+// Body.js -> need to update firebase currentSemester's document value
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';

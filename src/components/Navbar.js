@@ -5,13 +5,13 @@ import Button from '@mui/material/Button';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import Typography from '@mui/material/Typography';
 import { React, useContext, useState } from "react";
-import { UserContext } from "../../contexts/userContext";
+import { UserContext } from "../contexts/userContext";
 import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { getAuth, signOut } from "firebase/auth";
-import { app } from '../../firebase-config';
+import { app } from '../firebase-config';
 import { useNavigate } from 'react-router-dom'
 
 
@@ -45,7 +45,6 @@ const Navbar = () => {
   }
 
   const handleClose = () => {
-
     setAnchorEl(null);
   };
   return (

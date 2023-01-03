@@ -4,11 +4,15 @@ import Select from '@mui/material/Select';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
-const Course = ({ score, setScores }) => {
+const Course = ({ score, setScores}) => {
 
+
+   
     const handleChange = (e) => {
         let { name, value } = e.target
 
+
+        
         setScores((prevScores) => {
             // Initalise a new scoresArr
             let scoresArr = []
@@ -17,6 +21,8 @@ const Course = ({ score, setScores }) => {
                 const singleScore = prevScores[x]
                 // If both are equal -> correct row
                 if (singleScore.id === score.id) {  // Find your score using ID
+                
+                 
                     // Update your score values
                     const newScore = {
                         ...prevScores[x],
@@ -30,6 +36,7 @@ const Course = ({ score, setScores }) => {
             return scoresArr
 
         })
+
 
     }
 
@@ -48,10 +55,13 @@ const Course = ({ score, setScores }) => {
         })
     }
 
+    
+
     return (
         <Grid sx={{ paddingTop: 1.5 }} container spacing={2} columns={{ xs: 4 }}>
             <Grid item xs={1}>
-                <TextField
+                <TextField onChange={handleChange}  value={score.Course}
+                    name="Course"
                     id="outlined-basic"
                     label="Course"
                     variant="outlined" />
